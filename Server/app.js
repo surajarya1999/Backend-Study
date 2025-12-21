@@ -30,6 +30,6 @@ app.use(express.json())
 
 //route load
 app.use('/api',web)
-app.listen(port, () => {
-  console.log(`server start localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`server start localhost:${port}`)
+// })
