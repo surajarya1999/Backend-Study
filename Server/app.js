@@ -11,9 +11,9 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin: [
+  origin: ["https://glittering-eclair-e1efc7.netlify.app/",
     // "http://localhost:5173",
-    "https:ai-study-buddy-livid-omega.vercel.app"],
+  ],
   credentials: true,              // allow cookies
 }));
 
