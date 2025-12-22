@@ -12,7 +12,7 @@ require("dotenv").config();
 
 app.use(cors({
   origin: [
-    "http://localhost:5173",
+    // "http://localhost:5173",
     "https:ai-study-buddy-livid-omega.vercel.app"],
   credentials: true,              // allow cookies
 }));
