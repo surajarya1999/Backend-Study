@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const web = require('./routes/web')   
+const web = require('./routes/web')
 const connectDB = require('./db/connectDB')
 const cookieParser = require('cookie-parser')
 const fileupload = require('express-fileupload')
@@ -11,7 +11,9 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin: "http://localhost:5173", // frontend ka exact URL
+  origin: [
+    "http://localhost:5173",
+    "https:ai-study-buddy-livid-omega.vercel.app"],
   credentials: true,              // allow cookies
 }));
 
@@ -20,7 +22,7 @@ app.use(cors({
 app.use(cookieParser());
 
 //file upload
-app.use(fileupload({useTempFiles:true}))
+app.use(fileupload({ useTempFiles: true }))
 
 
 //data base connection
@@ -29,7 +31,7 @@ connectDB()
 app.use(express.json())
 
 //route load
-app.use('/api',web)
+app.use('/api', web)
 // app.listen(port, () => {
 //   console.log(`server start localhost:${port}`)
 // })
