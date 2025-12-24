@@ -8,7 +8,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(cors({
-  origin: ["https://glittering-eclair-e1efc7.netlify.app"],
+  origin: ["https://glittering-eclair-e1efc7.netlify.app/"],
   credentials: true,
 }));
 
