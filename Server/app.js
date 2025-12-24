@@ -21,7 +21,7 @@ app.use(cors({
 //cookie
 app.use(cookieParser());
 
-//file upload
+//file uploadad
 app.use(fileupload({ useTempFiles: true }))
 
 
