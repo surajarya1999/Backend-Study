@@ -1,37 +1,31 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const web = require('./routes/web')
-const connectDB = require('./db/connectDB')
-const cookieParser = require('cookie-parser')
-const fileupload = require('express-fileupload')
-const cors = require('cors')
+const express = require("express");
+const app = express();
+const web = require("./routes/web");
+const connectDB = require("./db/connectDB");
+const cookieParser = require("cookie-parser");
+const fileupload = require("express-fileupload");
+const cors = require("cors");
 require("dotenv").config();
 
-
-
 app.use(cors({
-  origin: ["https://glittering-eclair-e1efc7.netlify.app",
-    // "http://localhost:5173",
-  ],
-  credentials: true,              // allow cookies
+  origin: ["https://glittering-eclair-e1efc7.netlify.app"],
+  credentials: true,
 }));
 
-
-//cookie
+// cookie
 app.use(cookieParser());
 
-//file uploadad
-app.use(fileupload({ useTempFiles: true }))
+// file upload
+app.use(fileupload({ useTempFiles: true }));
 
+// json
+app.use(express.json());
 
-//data base connection
-connectDB()
-//data get
-app.use(express.json())
+// database
+connectDB();
 
-//route load
-app.use('/api', web)
-// app.listen(port, () => {
-//   console.log(`server start localhost:${port}`)
-// })
+// routes
+app.use("/api", web);
+
+// ✅ VERY IMPORTANT (EXPORT)
+module.exports = app;
