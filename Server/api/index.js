@@ -1,2 +1,2 @@
-const app = require("../app");
+const app = require("../app"); // ye correct rahega
 module.exports = app;
